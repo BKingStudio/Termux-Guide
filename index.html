@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A complete reference guide for Termux commands including package management, media tools, network, system, and automation utilities." />
+  <meta name="keywords" content="Termux, Termux Commands, Linux, Android CLI, Command Line, Shell, Terminal" />
+  <meta name="author" content="Your Name or Brand" />
+
+  <meta property="og:title" content="Termux Commands Reference Guide" />
+  <meta property="og:description" content="Master Termux with this powerful command reference categorized for beginners and pros." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://yourdomain.com/termux-preview.png" />
+  <meta property="og:url" content="https://yourdomain.com/termux-commands" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Termux Commands Reference Guide" />
+  <meta name="twitter:description" content="Essential Termux CLI commands in a clean, searchable format." />
+  <meta name="twitter:image" content="https://yourdomain.com/termux-preview.png" />
+
+  <title>Termux Commands Guide</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+  
+
+  <link rel="stylesheet" href="styles/style.css">
+ 
+  <!-- JSON-LD SEO FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How to update packages in Termux?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use the command pkg update to update the package list."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How to install a package in Termux?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use pkg install [package_name] to install a specific package."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 font-sans transition-colors duration-300">
+
+  <header class="bg-black text-white p-6 shadow">
+    <h1 class="text-3xl font-bold text-center">📟 Termux Commands Reference</h1>
+    <p class="text-center text-sm mt-1">A complete CLI guide for Android + Linux users</p>
+    <input type="text" id="bking_search" placeholder="Search commands or chapters..." class="p-2 rounded text-black" />             <button onclick="Search()" class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded text-sm">Search</button>
+  </header>
+
+  <!-- Main Content -->
+<main class="p-4">
+  <section id="bking_intro" class="mb-6">
+    <h2 class="text-2xl font-semibold mb-2">🌟 Introduction to Termux</h2>
+    <p class="mb-4">Termux is a powerful open-source terminal emulator and Linux environment for Android that allows users to run various Linux utilities and programming languages on their mobile devices. With Termux, users can access a full Linux command line environment directly on their smartphones or tablets, enabling them to perform a wide range of tasks, from basic file manipulation to advanced development and system administration tasks.</p>
+  </section>
+  
+      <h2 class="text-xl font-semibold mb-4">📚 Chapters</h2>
+      <section class="chapter bg-gray-200 dark:bg-gray-800 p-4 rounded shadow mt-6">
+        <h4 class="text-xl font-semibold">
+          <a href="Chapters/chapter_1.html" class="bking_chapterLink text-blue-600 hover:underline">Chapter 1: Basic Commands</a>
+        </h4>
+        <p class="mt-1">Learn essential Termux commands for navigation, file manipulation, and basic system operations.</p>
+      </section>
+
+        <section class="chapter bg-gray-200 dark:bg-gray-800 p-4 rounded shadow mt-6">
+          <h4 class="text-xl font-semibold">
+            <a href="Chapters/chapter_2.html" class="bking_chapterLink text-blue-600 hover:underline">Chapter 2: Advanced Commands</a>
+          </h4>
+          <p class="mt-1">Explore advanced Termux commands for system administration, networking, and customization.</p>
+        </section>
+
+        <section class="chapter bg-gray-200 dark:bg-gray-800 p-4 rounded shadow mt-6">
+          <h4 class="text-xl font-semibold">
+            <a href="Chapters/chapter_3.html" class="bking_chapterLink text-blue-600 hover:underline">Chapter 3: Developer Commands</a>
+          </h4>
+          <p class="mt-1">Discover Termux commands tailored for developers, including version control, programming, and debugging tools.</p>
+        </section>
+
+        <section class="chapter bg-gray-200 dark:bg-gray-800 p-4 rounded shadow mt-6">
+          <h4 class="text-xl font-semibold">
+            <a href="Chapters/chapter_4.html" class="bking_chapterLink text-blue-600 hover:underline">Chapter 4: Expert Commands</a>
+          </h4>
+          <p class="mt-1">Master expert-level Termux commands for accessing device APIs, managing media, and interacting with the system at a deeper level.</p>
+        </section>
+
+        <section class="chapter bg-gray-200 dark:bg-gray-800 p-4 rounded shadow mt-6">
+          <h4 class="text-xl font-semibold">
+            <a href="Chapters/chapter_5.html" class="bking_chapterLink text-blue-600 hover:underline">Chapter 5: Power User Commands</a>
+          </h4>
+          <p class="mt-1">Unleash the full potential of Termux with commands for power users, including audio, camera, and networking utilities.</p>
+        </section>
+
+        <section class="chapter bg-gray-200 dark:bg-gray-800 p-4 rounded shadow mt-6">
+          <h4 class="text-xl font-semibold">
+            <a href="Chapters/chapter_6.html" class="bking_chapterLink text-blue-600 hover:underline">Chapter 6: Developer Commands</a>
+          </h4>
+          <p class="mt-1">Dive into developer-focused Termux commands for coding, testing, and debugging mobile applications.</p>
+        </section>
+
+        <section class="chapter bg-gray-200 dark:bg-gray-800 p-4 rounded shadow mt-6">
+          <h4 class="text-xl font-semibold">
+            <a href="Chapters/chapter_7.html" class="bking_chapterLink text-blue-600 hover:underline">Chapter 7: System Administration Commands</a>
+          </h4>
+          <p class="mt-1">Learn essential system administration commands for managing files, users, and system settings.</p>
+        </section>
+
+
+        <section class="chapter bg-gray-200 dark:bg-gray-800 p-4 rounded shadow  mt-6">
+          <h4 class="text-xl font-semibold">
+            <a href="Chapters/chapter_8.html" class="bking_chapterLink text-blue-600 hover:underline">Chapter 8: Network Administration Commands</a>
+          </h4>
+          <p class="mt-1">Master network administration commands for monitoring, troubleshooting, and securing network connections.</p>
+        </section>
+
+
+        <section class="chapter bg-gray-200 dark:bg-gray-800 p-4 rounded shadow mt-6">
+          <h4 class="text-xl font-semibold">
+            <a href="Chapters/chapter_9.html" class="bking_chapterLink text-blue-600 hover:underline">Chapter 9: Data Management Commands</a>
+          </h4>
+          <p class="mt-1">Explore data management commands for manipulating files, directories, and data streams.</p>
+        </section>
+
+      </section>
+
+ 
+  <!-- Dynamic Chapter Content -->
+  <section id="bking_chapterContent" class="bg-grey p-4 rounded shadow mt-6">
+    <p>Select a chapter to view its content.</p>
+  </section>
+
+  <!-- Ad Placeholder -->
+  <div class="my-4">
+    <!-- Replace with your ad code -->
+    <script async src="https://your-ad-network.com/ad.js"><p>Ads goes Here</p></script>
+  </div>
+
+</main>
+
+<!-- Footer -->
+
+  <footer class="bg-black text-white p-4 mt-8 text-center">
+    <p>&copy; 2025 Termux Guide. Built with ❤️ for CLI lovers.</p>
+  </footer>
+
+  <!-- Scripts -->
+</body>
+</html>

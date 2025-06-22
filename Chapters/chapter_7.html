@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 7 - System Administration Commands</title>
+  <link rel="stylesheet" href="/styles/style.css" type="text/css" media="all" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#1f1f1f] text-gray-100 font-mono">
+
+  <header class="bg-black text-white p-6 shadow">
+    <h1 class="text-3xl font-bold text-center">
+      <a href="/index.html" class="hover:underline">📟 Termux Commands Reference</a>
+    </h1>
+    <p class="text-center text-sm mt-1">A complete CLI guide for Android + Linux users</p>
+    <input type="text" id="bking_search" placeholder="Search commands or chapters..." class="p-2 rounded text-black" />
+    <button onclick="Search()" class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded text-sm">Search</button>
+  </header>
+
+<div class="p-4 max-w-4xl mx-auto">
+  <h2 class="text-3xl font-bold mb-6 text-green-600 border-b border-gray-600 pb-2">🛠️ Chapter 7: System Administration Commands</h2>
+  
+  <!-- Part 1: Package Management -->
+  <div class="category-wrap" data-category="package">
+    <h2 class="category-title text-2xl font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 py-2 px-4 rounded-lg shadow-md mt-8 mb-4 text-center">📦 Package Management</h2>
+    <div class="category-table overflow-x-auto mt-6">
+      <table class="min-w-full table-auto border-collapse rounded-lg overflow-hidden shadow-md">
+        <thead class="bg-gray-200 dark:bg-gray-900 text-gray-700 dark:text-gray-200 text-left">
+          <tr>
+            <th class="p-3">#</th>
+            <th class="p-3">Command</th>
+            <th class="p-3">Description</th>
+            <th class="p-3">Action</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">1</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd329">termux-add-repo [repository]</td>
+            <td class="p-3">Adds a new repository to the list of available repositories</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd329')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">2</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd330">termux-create-package [package_name]</td>
+            <td class="p-3">Creates a new package with the specified name</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd330')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">3</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd331">termux-package-info [package_name]</td>
+            <td class="p-3">Displays information about the specified package</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd331')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">4</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd332">termux-package-list [options]</td>
+            <td class="p-3">Lists installed packages</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd332')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Part 2: System Configuration -->
+  <div class="category-wrap" data-category="config">
+    <h2 class="category-title text-2xl font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 py-2 px-4 rounded-lg shadow-md mt-8 mb-4 text-center">⚙️ System Configuration</h2>
+    <div class="category-table overflow-x-auto mt-6">
+      <table class="min-w-full table-auto border-collapse rounded-lg overflow-hidden shadow-md">
+        <thead class="bg-gray-200 dark:bg-gray-900 text-gray-700 dark:text-gray-200 text-left">
+          <tr>
+            <th class="p-3">#</th>
+            <th class="p-3">Command</th>
+            <th class="p-3">Description</th>
+            <th class="p-3">Action</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">5</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd333">termux-chroot [directory]</td>
+            <td class="p-3">Changes the root directory for the current session</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd333')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">6</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd334">termux-fix-permissions [directory/file]</td>
+            <td class="p-3">Fixes permissions for the specified directory or file</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd334')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">7</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd335">termux-fix-shebang [file]</td>
+            <td class="p-3">Fixes the shebang of a script file to make it executable</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd335')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">8</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd336">termux-info</td>
+            <td class="p-3">Displays system information</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd336')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">9</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd337">termux-lock-settings</td>
+            <td class="p-3">Locks Termux settings with a password</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd337')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">10</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd338">termux-reload-settings</td>
+            <td class="p-3">Reloads Termux settings from disk</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd338')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">11</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd339">termux-reload-style</td>
+            <td class="p-3">Reloads the Termux console style settings</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd339')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">12</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd340">termux-reload-fonts</td>
+            <td class="p-3">Reloads the Termux console font settings</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd340')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">13</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd341">termux-reload-properties</td>
+            <td class="p-3">Reloads the Termux console properties settings</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd341')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">14</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd342">termux-reset-settings</td>
+            <td class="p-3">Resets Termux settings to default values</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd342')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">15</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd343">termux-reset</td>
+            <td class="p-3">Resets Termux to a clean state</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd343')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">16</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd344">termux-setup-storage</td>
+            <td class="p-3">Sets up storage for Termux</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd344')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">17</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd345">termux-telephony-configure</td>
+            <td class="p-3">Configures telephony settings</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd345')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Part 3: Security -->
+  <div class="category-wrap" data-category="security">
+    <h2 class="category-title text-2xl font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 py-2 px-4 rounded-lg shadow-md mt-8 mb-4 text-center">🔒 Security</h2>
+    <div class="category-table overflow-x-auto mt-6">
+      <table class="min-w-full table-auto border-collapse rounded-lg overflow-hidden shadow-md">
+        <thead class="bg-gray-200 dark:bg-gray-900 text-gray-700 dark:text-gray-200 text-left">
+          <tr>
+            <th class="p-3">#</th>
+            <th class="p-3">Command</th>
+            <th class="p-3">Description</th>
+            <th class="p-3">Action</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">18</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd346">termux-fingerprint [options]</td>
+            <td class="p-3">Manages fingerprints for SSH connections</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd346')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">19</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd347">termux-sudo</td>
+            <td class="p-3">Runs a command with superuser privileges</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd347')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Part 4: Device Control -->
+  <div class="category-wrap" data-category="device">
+    <h2 class="category-title text-2xl font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 py-2 px-4 rounded-lg shadow-md mt-8 mb-4 text-center">📱 Device Control</h2>
+    <div class="category-table overflow-x-auto mt-6">
+      <table class="min-w-full table-auto border-collapse rounded-lg overflow-hidden shadow-md">
+        <thead class="bg-gray-200 dark:bg-gray-900 text-gray-700 dark:text-gray-200 text-left">
+          <tr>
+            <th class="p-3">#</th>
+            <th class="p-3">Command</th>
+            <th class="p-3">Description</th>
+            <th class="p-3">Action</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">20</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd348">termux-notify</td>
+            <td class="p-3">Sends a notification to the notification bar</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd348')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">21</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd349">termux-open [file/path]</td>
+            <td class="p-3">Opens a file or directory with the default app</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd349')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">22</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd350">termux-open-url [URL]</td>
+            <td class="p-3">Opens the specified URL in the default browser</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd350')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">23</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd351">termux-share</td>
+            <td class="p-3">Shares files or text using the Android share menu</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd351')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">24</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd352">termux-tmpdir</td>
+            <td class="p-3">Prints the path to the temporary directory</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd352')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">25</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd353">termux-wallpaper [file]</td>
+            <td class="p-3">Sets the device's wallpaper to the specified image file</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd353')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">26</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd354">termux-wake-lock</td>
+            <td class="p-3">Keeps the device awake until explicitly released</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd354')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">27</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd355">termux-wake-unlock</td>
+            <td class="p-3">Releases the wake lock on the device</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd355')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Part 5: Network Management -->
+  <div class="category-wrap" data-category="network">
+    <h2 class="category-title text-2xl font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 py-2 px-4 rounded-lg shadow-md mt-8 mb-4 text-center">🌐 Network Management</h2>
+    <div class="category-table overflow-x-auto mt-6">
+      <table class="min-w-full table-auto border-collapse rounded-lg overflow-hidden shadow-md">
+        <thead class="bg-gray-200 dark:bg-gray-900 text-gray-700 dark:text-gray-200 text-left">
+          <tr>
+            <th class="p-3">#</th>
+            <th class="p-3">Command</th>
+            <th class="p-3">Description</th>
+            <th class="p-3">Action</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">28</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd356">termux-wifi-connect [SSID] [password]</td>
+            <td class="p-3">Connects to the specified Wi-Fi network</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd356')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">29</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd357">termux-wifi-enable [true/false]</td>
+            <td class="p-3">Enables or disables Wi-Fi</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd357')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">30</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd358">termux-wifi-ipinfo</td>
+            <td class="p-3">Displays information about the device's IP address</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd358')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">31</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd359">termux-wifi-scaninfo</td>
+            <td class="p-3">Scans for Wi-Fi networks and displays information</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd359')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">32</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd360">termux-wifi-tether</td>
+            <td class="p-3">Tethers the device's Wi-Fi connection</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd360')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">33</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd361">termux-wifi-disable</td>
+            <td class="p-3">Disables Wi-Fi</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd361')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">34</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd362">termux-wifi-enable</td>
+            <td class="p-3">Enables Wi-Fi</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd362')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">35</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd363">termux-wifi-ipinfo</td>
+            <td class="p-3">Shows information about the Wi-Fi IP address</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd363')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">36</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd364">termux-wifi-scaninfo</td>
+            <td class="p-3">Scans for Wi-Fi networks and displays information</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd364')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">37</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd365">termux-wifi-tether</td>
+            <td class="p-3">Shares the cellular data connection via Wi-Fi</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd365')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">38</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd366">termux-wifi-toggle</td>
+            <td class="p-3">Toggles the Wi-Fi connection</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd366')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">39</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd367">termux-wifi-connect</td>
+            <td class="p-3">Connects to a specified Wi-Fi network</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd367')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">40</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd368">termux-wifi-connectioninfo</td>
+            <td class="p-3">Shows information about the current Wi-Fi connection</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd368')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">41</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd369">termux-wifi-disable</td>
+            <td class="p-3">Disables Wi-Fi</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd369')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">42</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd370">termux-wifi-enable</td>
+            <td class="p-3">Enables Wi-Fi</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd370')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">43</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd371">termux-wifi-ipinfo</td>
+            <td class="p-3">Displays information about the device's IP address</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd371')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">44</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd372">termux-wifi-scaninfo</td>
+            <td class="p-3">Scans for Wi-Fi networks and displays information</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd372')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">45</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd373">termux-wifi-tether</td>
+            <td class="p-3">Tethers the device's Wi-Fi connection</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd373')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">46</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd374">termux-wifi-toggle</td>
+            <td class="p-3">Toggles the Wi-Fi connection</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd374')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">47</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd375">termux-wifi-connect [SSID] [password]</td>
+            <td class="p-3">Connects to the specified Wi-Fi network</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd375')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">48</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd376">termux-wifi-enable [true/false]</td>
+            <td class="p-3">Enables or disables Wi-Fi</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd376')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-black text-white p-4 mt-8 text-center">
+  <p>&copy; 2025 Termux Guide. Built with <span aria-label="love">❤️</span> for CLI lovers.</p>
+</footer>
+
+<script src="/script/script.js" type="text/javascript" charset="utf-8"></script>
+
+</body>
+</html>

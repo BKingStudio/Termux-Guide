@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 3 - Advanced Commands</title>
+  <link rel="stylesheet" href="/styles/style.css" type="text/css" media="all" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#1f1f1f] text-gray-100 font-mono">
+
+  <header class="bg-black text-white p-6 shadow">
+    <h1 class="text-3xl font-bold text-center">
+      <a href="/index.html" class="hover:underline">📟 Termux Commands Reference</a>
+    </h1>
+    <p class="text-center text-sm mt-1">A complete CLI guide for Android + Linux users</p>
+    <input type="text" id="bking_search" placeholder="Search commands or chapters..." class="p-2 rounded text-black" />
+    <button onclick="Search()" class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded text-sm">Search</button>
+  </header>
+
+<div class="p-4 max-w-4xl mx-auto">
+  <h2 class="text-3xl font-bold mb-6 text-green-600 border-b border-gray-600 pb-2">🔥 Chapter 3: Advanced Commands</h2>
+  
+  <!-- Part 1: Programming -->
+  <div class="category-wrap" data-category="programming">
+    <h2 class="category-title text-2xl font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 py-2 px-4 rounded-lg shadow-md mt-8 mb-4 text-center">💻 Programming</h2>
+    <div class="category-table overflow-x-auto mt-6">
+      <table class="min-w-full table-auto border-collapse rounded-lg overflow-hidden shadow-md">
+        <thead class="bg-gray-200 dark:bg-gray-900 text-gray-700 dark:text-gray-200 text-left">
+          <tr>
+            <th class="p-3">#</th>
+            <th class="p-3">Command</th>
+            <th class="p-3">Description</th>
+            <th class="p-3">Action</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">1</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd115">python</td>
+            <td class="p-3">Starts Python interpreter</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd115')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">2</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd116">python [script.py]</td>
+            <td class="p-3">Runs Python script</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd116')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">3</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd117">pip install [package]</td>
+            <td class="p-3">Installs Python packages</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd117')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">4</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd118">pip uninstall [package]</td>
+            <td class="p-3">Uninstalls Python packages</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd118')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">5</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd119">pip freeze</td>
+            <td class="p-3">Lists installed Python packages</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd119')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">6</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd120">node</td>
+            <td class="p-3">Starts Node.js interpreter</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd120')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">7</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd121">node [script.js]</td>
+            <td class="p-3">Runs JavaScript file</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd121')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">8</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd122">npm install [package]</td>
+            <td class="p-3">Installs Node.js packages</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd122')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">9</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd123">npm uninstall [package]</td>
+            <td class="p-3">Uninstalls Node.js packages</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd123')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">10</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd124">npm list</td>
+            <td class="p-3">Lists installed Node.js packages</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd124')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">11</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd125">gcc [file.c] -o [output]</td>
+            <td class="p-3">Compiles C program</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd125')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">12</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd126">g++ [file.cpp] -o [output]</td>
+            <td class="p-3">Compiles C++ program</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd126')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">13</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd127">javac [file.java]</td>
+            <td class="p-3">Compiles Java program</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd127')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">14</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd128">java [classname]</td>
+            <td class="p-3">Runs Java program</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd128')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">15</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd129">php [file.php]</td>
+            <td class="p-3">Runs PHP script</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd129')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">16</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd130">ruby [file.rb]</td>
+            <td class="p-3">Runs Ruby script</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd130')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">17</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd131">perl [file.pl]</td>
+            <td class="p-3">Runs Perl script</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd131')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">18</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd132">bash [file.sh]</td>
+            <td class="p-3">Runs Bash script</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd132')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">19</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd133">go run [file.go]</td>
+            <td class="p-3">Compiles and runs Go program</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd133')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">20</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd134">rustc [file.rs]</td>
+            <td class="p-3">Compiles Rust program</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd134')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Part 2: Text Processing -->
+  <div class="category-wrap" data-category="text">
+    <h2 class="text-2xl font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 py-2 px-4 rounded-lg shadow-md mt-8 mb-4 text-center">📝 Text Processing</h2>
+    <div class="category-table overflow-x-auto mt-6">
+      <table class="min-w-full table-auto border-collapse rounded-lg overflow-hidden shadow-md">
+        <thead class="bg-gray-200 dark:bg-gray-900 text-gray-700 dark:text-gray-200 text-left">
+          <tr>
+            <th class="p-3">#</th>
+            <th class="p-3">Command</th>
+            <th class="p-3">Description</th>
+            <th class="p-3">Action</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">1</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd135">grep [pattern] [file]</td>
+            <td class="p-3">Searches for patterns in files</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd135')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">2</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd136">awk '{print $1}' [file]</td>
+            <td class="p-3">Processes and analyzes text files</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd136')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">3</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd137">sed 's/old/new/g' [file]</td>
+            <td class="p-3">Stream editor for filtering/transforming text</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd137')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">4</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd138">sort [file]</td>
+            <td class="p-3">Sorts lines in a file</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd138')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">5</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd139">uniq [file]</td>
+            <td class="p-3">Filters adjacent matching lines</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd139')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">6</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd140">cut -d':' -f1 [file]</td>
+            <td class="p-3">Cuts sections from each line of files</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd140')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">7</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd141">paste [file1] [file2]</td>
+            <td class="p-3">Merges lines of files</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd141')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">8</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd142">join [file1] [file2]</td>
+            <td class="p-3">Joins lines of two files on a common field</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd142')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">9</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd143">tr 'a-z' 'A-Z' < [file]</td>
+            <td class="p-3">Translates or deletes characters</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd143')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">10</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd144">fmt [file]</td>
+            <td class="p-3">Simple optimal text formatter</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd144')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">11</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd145">pr [file]</td>
+            <td class="p-3">Convert text files for printing</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd145')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">12</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd146">fold -w 80 [file]</td>
+            <td class="p-3">Wraps each input line to fit in specified width</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd146')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">13</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd147">column -t [file]</td>
+            <td class="p-3">Columnate lists</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd147')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">14</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd148">nl [file]</td>
+            <td class="p-3">Numbers lines of files</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd148')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">15</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd149">head -n 10 [file]</td>
+            <td class="p-3">Outputs the first part of files</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd149')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">16</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd150">tail -n 10 [file]</td>
+            <td class="p-3">Outputs the last part of files</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd150')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">17</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd151">wc [file]</td>
+            <td class="p-3">Counts lines, words, and characters</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd151')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">18</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd152">diff [file1] [file2]</td>
+            <td class="p-3">Compares files line by line</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd152')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">19</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd153">comm [file1] [file2]</td>
+            <td class="p-3">Compares two sorted files line by line</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd153')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">20</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd154">iconv -f utf8 -t ascii//TRANSLIT [file]</td>
+            <td class="p-3">Converts character encoding</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd154')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Part 3: System Monitoring -->
+  <div class="category-wrap" data-category="monitoring">
+    <h2 class="text-2xl font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 py-2 px-4 rounded-lg shadow-md mt-8 mb-4 text-center">📊 System Monitoring</h2>
+    <div class="category-table overflow-x-auto mt-6">
+      <table class="min-w-full table-auto border-collapse rounded-lg overflow-hidden shadow-md">
+        <thead class="bg-gray-200 dark:bg-gray-900 text-gray-700 dark:text-gray-200 text-left">
+          <tr>
+            <th class="p-3">#</th>
+            <th class="p-3">Command</th>
+            <th class="p-3">Description</th>
+            <th class="p-3">Action</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">1</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd155">top</td>
+            <td class="p-3">Displays Linux processes</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd155')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">2</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd156">htop</td>
+            <td class="p-3">Interactive process viewer</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd156')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">3</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd157">glances</td>
+            <td class="p-3">System monitoring tool</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd157')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">4</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd158">vmstat 1</td>
+            <td class="p-3">Reports virtual memory statistics</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd158')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">5</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd159">iostat</td>
+            <td class="p-3">Reports CPU and I/O statistics</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd159')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">6</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd160">mpstat 1</td>
+            <td class="p-3">Reports processor related statistics</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd160')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">7</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd161">sar -u 1</td>
+            <td class="p-3">Collects and reports system activity</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd161')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">8</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd162">dstat</td>
+            <td class="p-3">Versatile resource statistics tool</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd162')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">9</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd163">iftop</td>
+            <td class="p-3">Displays bandwidth usage</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd163')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">10</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd164">iotop</td>
+            <td class="p-3">Monitors disk I/O usage</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd164')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">11</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd165">nethogs</td>
+            <td class="p-3">Shows network traffic per process</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd165')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">12</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd166">bmon</td>
+            <td class="p-3">Bandwidth monitor</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd166')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">13</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd167">slabtop</td>
+            <td class="p-3">Displays kernel slab cache info</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd167')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">14</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd168">atop</td>
+            <td class="p-3">Advanced system and process monitor</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd168')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">15</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd169">pidstat</td>
+            <td class="p-3">Statistics for Linux tasks</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd169')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">16</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd170">netstat -tulnp</td>
+            <td class="p-3">Displays network connections</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd170')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">17</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd171">ss -tulnp</td>
+            <td class="p-3">Socket statistics</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd171')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">18</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd172">lsof</td>
+            <td class="p-3">Lists open files</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd172')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">19</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd173">strace -p [pid]</td>
+            <td class="p-3">Traces system calls</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd173')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">20</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd174">ltrace -p [pid]</td>
+            <td class="p-3">Traces library calls</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd174')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Part 4: Security -->
+  <div class="category-wrap" data-category="security">
+    <h2 class="text-2xl font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 py-2 px-4 rounded-lg shadow-md mt-8 mb-4 text-center">🔒 Security</h2>
+    <div class="category-table overflow-x-auto mt-6">
+      <table class="min-w-full table-auto border-collapse rounded-lg overflow-hidden shadow-md">
+        <thead class="bg-gray-200 dark:bg-gray-900 text-gray-700 dark:text-gray-200 text-left">
+          <tr>
+            <th class="p-3">#</th>
+            <th class="p-3">Command</th>
+            <th class="p-3">Description</th>
+            <th class="p-3">Action</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">1</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd175">passwd</td>
+            <td class="p-3">Changes user password</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd175')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">2</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd176">chmod 600 [file]</td>
+            <td class="p-3">Changes file permissions</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd176')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">3</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd177">chown [user]:[group] [file]</td>
+            <td class="p-3">Changes file owner and group</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd177')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">4</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd178">umask 077</td>
+            <td class="p-3">Sets default file permissions</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd178')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">5</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd179">ssh-keygen</td>
+            <td class="p-3">Generates SSH keys</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd179')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">6</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd180">gpg --gen-key</td>
+            <td class="p-3">Generates GPG keys</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd180')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">7</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd181">gpg --encrypt [file]</td>
+            <td class="p-3">Encrypts files</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd181')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">8</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd182">gpg --decrypt [file.gpg]</td>
+            <td class="p-3">Decrypts files</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd182')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">9</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd183">openssl enc -aes-256-cbc -salt -in [file] -out [file.enc]</td>
+            <td class="p-3">Encrypts files with OpenSSL</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd183')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">10</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd184">openssl enc -d -aes-256-cbc -in [file.enc] -out [file]</td>
+            <td class="p-3">Decrypts files with OpenSSL</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd184')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">11</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd185">fail2ban-client status</td>
+            <td class="p-3">Shows fail2ban status</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd185')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">12</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd186">iptables -L</td>
+            <td class="p-3">Lists firewall rules</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd186')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">13</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd187">ufw status</td>
+            <td class="p-3">Shows UFW firewall status</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd187')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">14</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd188">clamscan [file]</td>
+            <td class="p-3">Scans files for viruses</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd188')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">15</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd189">rkhunter --check</td>
+            <td class="p-3">Rootkit hunter</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd189')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">16</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd190">chkrootkit</td>
+            <td class="p-3">Checks for rootkits</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd190')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">17</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd191">lynis audit system</td>
+            <td class="p-3">Security auditing tool</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd191')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">18</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd192">auditctl -l</td>
+            <td class="p-3">Lists audit rules</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd192')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">19</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd193">sestatus</td>
+            <td class="p-3">Shows SELinux status</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd193')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">20</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd194">getenforce</td>
+            <td class="p-3">Shows SELinux mode</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd194')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Part 5: Miscellaneous -->
+  <div class="category-wrap" data-category="misc">
+    <h2 class="text-2xl font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 py-2 px-4 rounded-lg shadow-md mt-8 mb-4 text-center">🌀 Miscellaneous</h2>
+    <div class="category-table overflow-x-auto mt-6">
+      <table class="min-w-full table-auto border-collapse rounded-lg overflow-hidden shadow-md">
+        <thead class="bg-gray-200 dark:bg-gray-900 text-gray-700 dark:text-gray-200 text-left">
+          <tr>
+            <th class="p-3">#</th>
+            <th class="p-3">Command</th>
+            <th class="p-3">Description</th>
+            <th class="p-3">Action</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">1</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd195">man [command]</td>
+            <td class="p-3">Displays manual pages</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd195')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">2</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd196">info [command]</td>
+            <td class="p-3">Displays info documentation</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd196')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">3</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd197">whatis [command]</td>
+            <td class="p-3">Displays one-line manual descriptions</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd197')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">4</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd198">alias</td>
+            <td class="p-3">Lists all aliases</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd198')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">5</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd199">history</td>
+            <td class="p-3">Displays command history</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd199')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">6</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd200">time [command]</td>
+            <td class="p-3">Measures command execution time</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd200')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">7</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd201">watch [command]</td>
+            <td class="p-3">Executes program periodically</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd201')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">8</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd202">crontab -e</td>
+            <td class="p-3">Edits cron jobs</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd202')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">9</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd203">at [time]</td>
+            <td class="p-3">Schedules commands</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd203')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">10</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd204">cal</td>
+            <td class="p-3">Displays calendar</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd204')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">11</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd205">bc</td>
+            <td class="p-3">Arbitrary precision calculator</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd205')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">12</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd206">factor [number]</td>
+            <td class="p-3">Primes factors</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd206')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">13</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd207">units</td>
+            <td class="p-3">Unit conversion</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd207')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">14</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd208">yes [string]</td>
+            <td class="p-3">Repeats string until killed</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd208')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">15</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd209">seq [first] [last]</td>
+            <td class="p-3">Generates number sequences</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd209')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">16</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd210">shuf -i 1-100 -n 10</td>
+            <td class="p-3">Generates random permutations</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd210')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">17</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd211">fortune</td>
+            <td class="p-3">Displays random fortunes</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd211')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">18</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd212">cowsay [message]</td>
+            <td class="p-3">Displays message in speech bubble</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd212')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">19</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd213">figlet [text]</td>
+            <td class="p-3">Creates ASCII art text</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd213')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">20</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd214">toilet [text]</td>
+            <td class="p-3">Creates ASCII art text with styles</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd214')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-black text-white p-4 mt-8 text-center">
+  <p>&copy; 2025 Termux Guide. Built with <span aria-label="love">❤️</span> for CLI lovers.</p>
+</footer>
+
+<script src="/script/script.js" type="text/javascript" charset="utf-8"></script>
+
+</body>
+</html>

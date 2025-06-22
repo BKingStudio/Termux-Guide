@@ -1,0 +1,173 @@
+body {
+  background-color: #f9fafb; /* light gray (gray-50) */
+  color: #1f2937;            /* dark gray text (gray-800) */
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+               "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+               sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+               "Segoe UI Symbol", "Noto Color Emoji";
+  transition: background-color 300ms, color 300ms;
+}
+
+header {
+  background-color: #000000; /* Termux black */
+  color: #ffffff;
+  padding: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  font-size: 0.875rem;
+  color: #d1d5db; /* soft gray */
+  margin: 0;
+}
+
+footer {
+  background-color: #000000; /* Termux black */
+  color: #ffffff;
+  padding: 1rem;
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.875rem;
+  border-top: 1px solid #222; /* subtle separator */
+}
+
+/* Optional: subtle hover effect for fun */
+footer p:hover {
+  color: #58a6ff; /* Termux-ish blue */
+  transition: color 0.3s ease;
+}
+
+.highlight {
+  background-color: yellow;
+  font-weight: bold;
+}
+
+main {
+  padding: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Headings */
+h2 {
+  color: #34dc42;
+  margin-bottom: 0.5rem;
+}
+
+#bking_intro h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+#bking_chapterList h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Paragraphs */
+p {
+  margin-bottom: 1rem;
+}
+
+td{
+  color:#000; 
+}
+/* Chapter List Styling */
+ul {
+  padding-left: 1.25rem;
+  list-style-type: disc;
+}
+
+ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* Link Styles */
+.bking_chapterLink {
+  color: #2563eb; /* Tailwind blue-600 */
+  text-decoration: none;
+  font-weight: 500;
+  display: block;
+  margin-top: 0.75rem;
+}
+
+.bking_chapterLink:hover {
+  text-decoration: underline;
+}
+
+#bking_chapterContent {
+  background-color: #f3f4f6; /* Tailwind gray-100 */
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-top: 1.5rem;
+  color: #374151; /* gray-700 */
+  font-size: 1rem;
+}
+
+/* Responsive tweaks */
+@media (min-width: 640px) {
+  header h1 {
+    font-size: 2.25rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  #bking_chapterContent {
+    background-color: #1f2937; /* Tailwind gray-800 */
+    color: #f3f4f6; /* Tailwind gray-100 */
+  }
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  #bking_chapterContent {
+    font-size: 0.95rem;
+    padding: 0.875rem;
+  }
+}
+
+/* Responsive Styling */
+@media (max-width: 600px) {
+  main {
+    padding: 1rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  .bking_chapterLink {
+    font-size: 1rem;
+  }
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #111827; /* dark gray (gray-900) */
+    color: #e5e7eb;            /* light gray text (gray-200) */
+  }
+}
+
+#results {
+  background-color: #1f1f1f;
+  color: #fff;
+  padding: 1rem;
+  border: 1px solid #444;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+}
