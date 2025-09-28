@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 10 - Data Management Commands</title>
+  <link rel="stylesheet" href="/styles/style.css" type="text/css" media="all" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#1f1f1f] text-gray-100 font-mono">
+
+  <header class="bg-black text-white p-6 shadow">
+    <h1 class="text-3xl font-bold text-center">
+      <a href="/index.html" class="hover:underline">📟 Termux Commands Reference</a>
+    </h1>
+    <p class="text-center text-sm mt-1">A complete CLI guide for Android + Linux users</p>
+    <input type="text" id="bking_search" placeholder="Search commands or chapters..." class="p-2 rounded text-black" />
+    <button onclick="Search()" class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded text-sm">Search</button>
+  </header>
+
+<div class="p-4 max-w-4xl mx-auto">
+  <h2 class="text-3xl font-bold mb-6 text-green-600 border-b border-gray-600 pb-2">💾 Chapter 10: Data Management Commands</h2>
+  
+  <!-- Part 1: File Operations -->
+  <div class="category-wrap" data-category="files">
+    <h2 class="category-title text-2xl font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 py-2 px-4 rounded-lg shadow-md mt-8 mb-4 text-center">📁 File Operations</h2>
+    <div class="category-table overflow-x-auto mt-6">
+      <table class="min-w-full table-auto border-collapse rounded-lg overflow-hidden shadow-md">
+        <thead class="bg-gray-200 dark:bg-gray-900 text-gray-700 dark:text-gray-200 text-left">
+          <tr>
+            <th class="p-3">#</th>
+            <th class="p-3">Command</th>
+            <th class="p-3">Description</th>
+            <th class="p-3">Action</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">1</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd427">termux-cat [file]</td>
+            <td class="p-3">Displays the contents of a file</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd427')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">2</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd428">termux-cp [source] [destination]</td>
+            <td class="p-3">Copies files and directories</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd428')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">3</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd429">termux-mv [source] [destination]</td>
+            <td class="p-3">Moves or renames files and directories</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd429')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">4</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd430">termux-rm [options] [file]</td>
+            <td class="p-3">Removes files or directories</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd430')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">5</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd431">termux-ln [options] [source] [destination]</td>
+            <td class="p-3">Creates links to files</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd431')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">6</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd432">termux-touch [options] [file]</td>
+            <td class="p-3">Updates file timestamps or creates empty files</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd432')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">7</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd433">termux-mkdir [directory]</td>
+            <td class="p-3">Creates directories</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd433')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">8</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd434">termux-ls [options]</td>
+            <td class="p-3">Lists directory contents</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd434')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">9</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd435">termux-file-info [file]</td>
+            <td class="p-3">Displays information about a file</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd435')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">10</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd436">termux-stat [file]</td>
+            <td class="p-3">Displays file or file system status</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd436')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Part 2: File Viewing -->
+  <div class="category-wrap" data-category="viewing">
+    <h2 class="category-title text-2xl font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 py-2 px-4 rounded-lg shadow-md mt-8 mb-4 text-center">👀 File Viewing</h2>
+    <div class="category-table overflow-x-auto mt-6">
+      <table class="min-w-full table-auto border-collapse rounded-lg overflow-hidden shadow-md">
+        <thead class="bg-gray-200 dark:bg-gray-900 text-gray-700 dark:text-gray-200 text-left">
+          <tr>
+            <th class="p-3">#</th>
+            <th class="p-3">Command</th>
+            <th class="p-3">Description</th>
+            <th class="p-3">Action</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">11</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd437">termux-less [file]</td>
+            <td class="p-3">Displays file contents one screen at a time</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd437')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">12</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd438">termux-head [options] [file]</td>
+            <td class="p-3">Displays the first part of a file</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd438')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">13</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd439">termux-tail [options] [file]</td>
+            <td class="p-3">Displays the last part of a file</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd439')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">14</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd440">termux-file-editor [file]</td>
+            <td class="p-3">Opens a file in the default text editor</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd440')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">15</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd441">termux-od [options] [file]</td>
+            <td class="p-3">Displays file contents in various formats</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd441')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">16</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd442">termux-tac [file]</td>
+            <td class="p-3">Concatenates and prints files in reverse</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd442')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Part 3: Text Processing -->
+  <div class="category-wrap" data-category="text">
+    <h2 class="category-title text-2xl font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 py-2 px-4 rounded-lg shadow-md mt-8 mb-4 text-center">✂️ Text Processing</h2>
+    <div class="category-table overflow-x-auto mt-6">
+      <table class="min-w-full table-auto border-collapse rounded-lg overflow-hidden shadow-md">
+        <thead class="bg-gray-200 dark:bg-gray-900 text-gray-700 dark:text-gray-200 text-left">
+          <tr>
+            <th class="p-3">#</th>
+            <th class="p-3">Command</th>
+            <th class="p-3">Description</th>
+            <th class="p-3">Action</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">17</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd443">termux-cut [options]</td>
+            <td class="p-3">Cuts out selected portions of each line</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd443')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">18</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd444">termux-paste</td>
+            <td class="p-3">Combines lines from multiple files</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd444')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">19</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd445">termux-sort [options]</td>
+            <td class="p-3">Sorts lines of text files</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd445')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">20</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd446">termux-uniq [options]</td>
+            <td class="p-3">Reports or omits repeated lines</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd446')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">21</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd447">termux-wc [options] [file]</td>
+            <td class="p-3">Counts lines, words, and bytes</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd447')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">22</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd448">termux-split [options] [file]</td>
+            <td class="p-3">Splits a file into pieces</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd448')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">23</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd449">termux-truncate [options] [file]</td>
+            <td class="p-3">Shrink or extend the size of a file</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd449')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">24</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd450">termux-echo [text]</td>
+            <td class="p-3">Displays a line of text</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd450')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Part 4: System Information -->
+  <div class="category-wrap" data-category="system">
+    <h2 class="category-title text-2xl font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 py-2 px-4 rounded-lg shadow-md mt-8 mb-4 text-center">ℹ️ System Information</h2>
+    <div class="category-table overflow-x-auto mt-6">
+      <table class="min-w-full table-auto border-collapse rounded-lg overflow-hidden shadow-md">
+        <thead class="bg-gray-200 dark:bg-gray-900 text-gray-700 dark:text-gray-200 text-left">
+          <tr>
+            <th class="p-3">#</th>
+            <th class="p-3">Command</th>
+            <th class="p-3">Description</th>
+            <th class="p-3">Action</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">25</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd451">termux-pwd</td>
+            <td class="p-3">Prints the current working directory</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd451')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">26</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd452">termux-readlink [options] [file]</td>
+            <td class="p-3">Displays the value of a symbolic link</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd452')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">27</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd453">termux-realpath [file]</td>
+            <td class="p-3">Displays the absolute path of a file</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd453')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">28</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd454">termux-sync</td>
+            <td class="p-3">Synchronizes cached writes to storage</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd454')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">29</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd455">termux-sum [file]</td>
+            <td class="p-3">Calculates checksums and block counts</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd455')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">30</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd456">termux-md5sum [file]</td>
+            <td class="p-3">Calculates and verifies MD5 checksums</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd456')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Part 5: Additional Utilities -->
+  <div class="category-wrap" data-category="utilities">
+    <h2 class="category-title text-2xl font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 py-2 px-4 rounded-lg shadow-md mt-8 mb-4 text-center">🛠️ Additional Utilities</h2>
+    <div class="category-table overflow-x-auto mt-6">
+      <table class="min-w-full table-auto border-collapse rounded-lg overflow-hidden shadow-md">
+        <thead class="bg-gray-200 dark:bg-gray-900 text-gray-700 dark:text-gray-200 text-left">
+          <tr>
+            <th class="p-3">#</th>
+            <th class="p-3">Command</th>
+            <th class="p-3">Description</th>
+            <th class="p-3">Action</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">31</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd457">termux-which [command]</td>
+            <td class="p-3">Locates the executable file for a command</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd457')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">32</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd458">termux-whoami</td>
+            <td class="p-3">Displays the username of the current user</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd458')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">33</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd459">termux-xargs [options]</td>
+            <td class="p-3">Builds and executes command lines from input</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd459')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">34</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd460">termux-cat</td>
+            <td class="p-3">Concatenates files and prints output</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd460')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">35</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd461">termux-cp</td>
+            <td class="p-3">Copies files and directories</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd461')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">36</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd462">termux-cut</td>
+            <td class="p-3">Removes sections from each line of files</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd462')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">37</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd463">termux-paste</td>
+            <td class="p-3">Merges lines of files</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd463')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">38</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd464">termux-pwd</td>
+            <td class="p-3">Prints the current working directory</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd464')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">39</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd465">termux-rm</td>
+            <td class="p-3">Removes files or directories</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd465')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">40</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd466">termux-od</td>
+            <td class="p-3">Displays files in octal format</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd466')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">41</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd467">termux-sort</td>
+            <td class="p-3">Sorts lines of text files</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd467')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">42</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd468">termux-split</td>
+            <td class="p-3">Splits a file into pieces</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd468')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">43</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd469">termux-stat</td>
+            <td class="p-3">Displays file or file system status</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd469')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">44</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd470">termux-sum</td>
+            <td class="p-3">Displays checksum and block counts</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd470')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">45</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd471">termux-tac</td>
+            <td class="p-3">Concatenates and prints files in reverse</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd471')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">46</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd472">termux-tail</td>
+            <td class="p-3">Displays the last part of a file</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd472')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">47</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd473">termux-touch</td>
+            <td class="p-3">Updates file timestamps or creates files</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd473')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">48</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd474">termux-truncate</td>
+            <td class="p-3">Shrink or extend the size of files</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd474')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">49</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd475">termux-uniq</td>
+            <td class="p-3">Filters out repeated lines in a file</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd475')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">50</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd476">termux-wc</td>
+            <td class="p-3">Counts lines, words, and bytes</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd476')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-black text-white p-4 mt-8 text-center">
+  <p>&copy; 2025 Termux Guide. Built with <span aria-label="love">❤️</span> for CLI lovers.</p>
+</footer>
+
+<script src="/script/script.js" type="text/javascript" charset="utf-8"></script>
+
+</body>
+</html>

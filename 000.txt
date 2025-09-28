@@ -1,0 +1,19 @@
+ https://codepen.io/andybarefoot/pen/PBPrex
+
+ 
+  function shuffleShoes() {
+    const ul = document.querySelector('ul'); // Select your <ul>
+    const items = Array.from(ul.children); // Convert <li> nodes into an array
+
+    // Fisher-Yates Shuffle
+    for (let i = items.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [items[i], items[j]] = [items[j], items[i]];
+    }
+
+    // Re-append shuffled items
+    items.forEach(item => ul.appendChild(item));
+  }
+
+  // Shuffle once on page load
+  document.addEventListener('DOMContentLoaded', shuffleShoes);
