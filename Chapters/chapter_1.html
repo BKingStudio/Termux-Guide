@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 1 - Basic Commands</title>
+  <link rel="stylesheet" href="/styles/style.css" type="text/css" media="all" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#1f1f1f] text-gray-100 font-mono">
+
+  <header class="bg-black text-white p-6 shadow">
+    <h1 class="text-3xl font-bold text-center">
+      <a href="https://bkingstudio.github.io/Termux-Guide/" class="hover:underline">📟 Termux Commands Reference</a>
+    </h1>
+        <p class="text-center text-sm mt-1">A complete CLI guide for Android + Linux users</p>
+    <input type="text" id="bking_search" placeholder="Search commands or chapters..." class="p-2 rounded text-black" />             <button onclick="Search()" class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded text-sm">Search</button>
+  </header>
+
+<div class="p-4 max-w-4xl mx-auto">
+  <h2 class="text-3xl font-bold mb-6 text-green-600 border-b border-gray-600 pb-2">🧰 Chapter 1: Basic Commands</h2>
+  <div class="category-wrap" data-category="package">
+  <h2 class="category-title text-2xl font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 py-2 px-4 rounded-lg shadow-md mt-8 mb-4 text-center">📦 Package Management</h2>
+  <div class="category-table overflow-x-auto mt-6">
+    <table class="min-w-full table-auto border-collapse rounded-lg overflow-hidden shadow-md">
+      <thead class="bg-gray-200 dark:bg-gray-900 text-gray-700 dark:text-gray-200 text-left">
+        <tr>
+          <th class="p-3">#</th>
+          <th class="p-3">Command</th>
+          <th class="p-3">Description</th>
+          <th class="p-3">Action</th>
+        </tr>
+      </thead>
+      <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">1</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd1">pkg update</td>
+          <td class="p-3">Updates the package lists for upgrades and installs.</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd1')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+        </tr>
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">2</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd2">pkg upgrade</td>
+          <td class="p-3">Upgrades installed packages to the latest version.</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd2')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+        </tr>
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">3</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd3">pkg install [package_name]	</td>
+          <td class="p-3">Installs a specified package.</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd3')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+        </tr>
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">4</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd4">pkg uninstall [package_name]	</td>
+          <td class="p-3">Uninstalls a specified package.</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd4')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+        </tr>
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">5</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd5">pkg search [keyword]	</td>
+          <td class="p-3">Searches packages matching the keyword.</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd5')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+        </tr>
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">6</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd6">pkg info [package_name] </td>
+          <td class="p-3">Shows info about a specific package.</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd6')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+        </tr>
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">7</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd7">pkg list-all</td>
+          <td class="p-3">List all available packages.</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd7')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+        </tr>
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">8</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd8">pkg list-installed	</td>
+          <td class="p-3">Lists all installed packages.</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd8')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="category-wrap" data-category="storage">
+  <h2 class="text-2xl font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 py-2 px-4 rounded-lg shadow-md mt-8 mb-4 text-center">📂 Storage & File Access</h2>
+<div class="category-table overflow-x-auto mt-6">
+    <table class="min-w-full table-auto border-collapse rounded-lg overflow-hidden shadow-md">
+      <thead class="bg-gray-200 dark:bg-gray-900 text-gray-700 dark:text-gray-200 text-left">
+        <tr>
+          <th class="p-3">#</th>
+          <th class="p-3">Command</th>
+          <th class="p-3">Description</th>
+          <th class="p-3">Action</th>
+        </tr>
+      </thead>
+      <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">1</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd9">termux-setup-storage</td>
+          <td class="p-3">Grants Termux access to device storage.</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd9')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+        </tr>
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">2</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd10">termux-open [file/path]</td>
+          <td class="p-3">Opens a file or directory.</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd10')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+        </tr>
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">3</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd11">termux-download [URL]</td>
+          <td class="p-3">Downloads a file from a URL.</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd11')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+        </tr>
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">4</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd12">termux-upload [source] [destination]</td>
+          <td class="p-3">Uploads a file.</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd12')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+        </tr>
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">5</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd13">termux-storage-get [path]</td>
+          <td class="p-3">Gets storage info of a path.</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd13')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+        </tr>
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">6</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd14">termux-storage-list</td>
+          <td class="p-3">Lists all storage volumes.</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd14')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+      </tbody>
+    </table>
+</div>
+</div>
+
+<div class="category-wrap" data-category="device">
+<h2 class="text-2xl font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 py-2 px-4 rounded-lg shadow-md mt-8 mb-4 text-center">🔒 Device Control & Status</h2>
+<div class="category-table overflow-x-auto mt-6">
+    <table class="min-w-full table-auto border-collapse rounded-lg overflow-hidden shadow-md">
+      <thead class="bg-gray-200 dark:bg-gray-900 text-gray-700 dark:text-gray-200 text-left">
+        <tr>
+          <th class="p-3">#</th>
+          <th class="p-3">Command</th>
+          <th class="p-3">Description</th>
+          <th class="p-3">Action</th>
+        </tr>
+      </thead>
+      <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">1</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd15">termux-wake-lock</td>
+          <td class="p-3">Keeps the device awake.</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd15')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+        </tr>
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">2</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd16">termux-wake-unlock</td>
+          <td class="p-3">Unlocks the device sleep mode.</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd16')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+        </tr>
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">3</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd17">termux-battery-status</td>
+          <td class="p-3">Shows battery status.</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd17')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+        </tr>
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">4</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd18">termux-info</td>
+          <td class="p-3">Displays device/system info.</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd18')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+        </tr>
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">5</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd19">termux-wifi-enable [true/false]</td>
+          <td class="p-3">Enables/disables Wi-Fi.</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd19')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+        </tr>
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">6</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd20">termux-wifi-connectioninfo</td>
+          <td class="p-3">Shows current Wi-Fi connection info.</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd20')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">7</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd21">termux-wifi-ipinfo</td>
+          <td class="p-3">Shows current Wi-Fi connection info.</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd21')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">8</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd22">termux-wifi-scaninfo</td>
+          <td class="p-3">Scans available Wi-Fi networks.</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd22')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">9</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd23">termux-telephony-cellinfo</td>
+          <td class="p-3">Cellular network info.</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd23')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">10</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd24">termux-telephony-deviceinfo</td>
+          <td class="p-3">Device info.</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd24')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">11</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd25">termux-telephony-imei</td>
+          <td class="p-3">IMEI number.</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd25')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">12</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd26">termux-telephony-signalstrength</td>
+          <td class="p-3">Cellular signal strength.</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd26')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+      </tbody>
+    </table>
+</div>
+</div>
+
+<div class="category-wrap" data-category="media">
+<h2 class="text-2xl font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 py-2 px-4 rounded-lg shadow-md mt-8 mb-4 text-center">🔈 Audio, Vibration & Media</h2>
+<div class="category-table overflow-x-auto mt-6">
+    <table class="min-w-full table-auto border-collapse rounded-lg overflow-hidden shadow-md">
+      <thead class="bg-gray-200 dark:bg-gray-900 text-gray-700 dark:text-gray-200 text-left">
+        <tr>
+          <th class="p-3">#</th>
+          <th class="p-3">Command</th>
+          <th class="p-3">Description</th>
+          <th class="p-3">Action</th>
+        </tr>
+      </thead>
+      <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">1</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd27">termux-volume [option]</td>
+          <td class="p-3">Adjusts volume settings.</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd27')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+        </tr>
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">2</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd28">termux-vibrate</td>
+          <td class="p-3">Vibrates the device.</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd28')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+        </tr>
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">3</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd29">termux-media-player play [file]</td>
+          <td class="p-3">Plays media file.</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd29')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+        </tr>
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">4</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd30">termux-media-player pause</td>
+          <td class="p-3">Pauses media.</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd30')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+        </tr>
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">5</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd31">termux-media-player stop</td>
+          <td class="p-3">termux-media-player stop</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd31')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+        </tr>
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">6</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd32">termux-media-player seek [time]</td>
+          <td class="p-3">Seeks to specific time.</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd32')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">7</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd33">termux-media-player playlist [file]</td>
+          <td class="p-3">Loads a playlist.</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd33')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">8</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd34">termux-media-scan [path]</td>
+          <td class="p-3">Scans media files in a path.</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd34')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">9</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd35">termux-microphone-record [output_file]</td>
+          <td class="p-3">Records audio from mic.</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd35')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+      </tbody>
+    </table>
+</div>
+</div>
+
+<div class="category-wrap" data-category="camera">
+<h2 class="text-2xl font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 py-2 px-4 rounded-lg shadow-md mt-8 mb-4 text-center">📷 Camera Access</h2>
+<div class="category-table overflow-x-auto mt-6">
+  <table class="min-w-full table-auto border-collapse rounded-lg overflow-hidden shadow-md">
+    <thead class="bg-gray-200 dark:bg-gray-900 text-gray-700 dark:text-gray-200 text-left">
+      <tr>
+        <th class="p-3">#</th>
+        <th class="p-3">Command</th>
+        <th class="p-3">Description</th>
+        <th class="p-3">Action</th>
+      </tr>
+    </thead>
+    <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+      <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+        <td class="p-3">1</td>
+        <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd36">termux-camera-info</td>
+        <td class="p-3">Shows camera hardware info.</td>
+        <td class="p-3">
+          <button onclick="copyText('cmd36')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+        </td>
+      </tr>
+      <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+        <td class="p-3">2</td>
+        <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd37">termux-camera-photo [file]</td>
+        <td class="p-3">Takes photo with camera.</td>
+        <td class="p-3">
+          <button onclick="copyText('cmd37')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+        </td>
+      </tr>
+      <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+        <td class="p-3">3</td>
+        <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd38">termux-camera-record [file]</td>
+        <td class="p-3">Records video with camera.</td>
+        <td class="p-3">
+          <button onclick="copyText('cmd38')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+        </td>
+      </tr>
+      <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+        <td class="p-3">4</td>
+        <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd39">termux-camera-snapshot [file]</td>
+        <td class="p-3">Takes snapshot.</td>
+        <td class="p-3">
+          <button onclick="copyText('cmd39')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+        </td>
+      </tr>
+      <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+        <td class="p-3">5</td>
+        <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd40">termux-camera-view</td>
+        <td class="p-3">Live camera preview.</td>
+        <td class="p-3">
+          <button onclick="copyText('cmd40')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+
+<div class="category-wrap" data-category="phone">
+<h2 class="text-2xl font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 py-2 px-4 rounded-lg shadow-md mt-8 mb-4 text-center">📞 SMS, Telephony & Contact</h2>
+<div class="category-table overflow-x-auto mt-6">
+    <table class="min-w-full table-auto border-collapse rounded-lg overflow-hidden shadow-md">
+      <thead class="bg-gray-200 dark:bg-gray-900 text-gray-700 dark:text-gray-200 text-left">
+        <tr>
+          <th class="p-3">#</th>
+          <th class="p-3">Command</th>
+          <th class="p-3">Description</th>
+          <th class="p-3">Action</th>
+        </tr>
+      </thead>
+      <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">1</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd41">termux-sms-inbox</td>
+          <td class="p-3">Lists received SMS.</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd41')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+        </tr>
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">2</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd42">termux-sms-send -n [number] [message]</td>
+          <td class="p-3">Sends SMS.</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd42')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+        </tr>
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">3</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd43">termux-sms-list</td>
+          <td class="p-3">Lists all SMS.</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd43')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+        </tr>
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">4</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd44">termux-sms-view [id]</td>
+          <td class="p-3">Views specific SMS.</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd44')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+        </tr>
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">5</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd45">termux-contact-list</td>
+          <td class="p-3">Lists all contacts.</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd45')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+        </tr>
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">6</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd46">termux-contact-get [name]</td>
+          <td class="p-3">Gets a contact’s info.</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd46')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+      </tbody>
+    </table>
+</div>
+</div>
+
+
+<div class="category-wrap" data-category="shares">
+<h2 class="text-2xl font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 py-2 px-4 rounded-lg shadow-md mt-8 mb-4 text-center">📤 Sharing & Clipboard</h2>
+<div class="category-table overflow-x-auto mt-6">
+    <table class="min-w-full table-auto border-collapse rounded-lg overflow-hidden shadow-md">
+      <thead class="bg-gray-200 dark:bg-gray-900 text-gray-700 dark:text-gray-200 text-left">
+        <tr>
+          <th class="p-3">#</th>
+          <th class="p-3">Command</th>
+          <th class="p-3">Description</th>
+          <th class="p-3">Action</th>
+        </tr>
+      </thead>
+      <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">1</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd47">termux-share</td>
+          <td class="p-3">Shares file or text.</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd47')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+        </tr>
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">2</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd48">termux-clipboard-get</td>
+          <td class="p-3">Gets clipboard contents.</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd48')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+        </tr>
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">3</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd49">termux-clipboard-set [text]</td>
+          <td class="p-3">Sets clipboard content.</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd49')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+</div>
+
+
+<div class="category-wrap" data-category="location">
+<h2 class="text-2xl font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 py-2 px-4 rounded-lg shadow-md mt-8 mb-4 text-center">📍 Location</h2>
+<div class="category-table overflow-x-auto mt-6">
+    <table class="min-w-full table-auto border-collapse rounded-lg overflow-hidden shadow-md">
+      <thead class="bg-gray-200 dark:bg-gray-900 text-gray-700 dark:text-gray-200 text-left">
+        <tr>
+          <th class="p-3">#</th>
+          <th class="p-3">Command</th>
+          <th class="p-3">Description</th>
+          <th class="p-3">Action</th>
+        </tr>
+      </thead>
+      <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">1</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd50">termux-location</td>
+          <td class="p-3">Shows current device location.</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd50')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+        </tr>
+      </tbody> 
+    </table>
+</div>
+</div>
+
+<div class="category-wrap" data-category="Torch">
+<h2 class="text-2xl font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 py-2 px-4 rounded-lg shadow-md mt-8 mb-4 text-center">💡 Torch & Wallpaper</h2>
+<div class="category-table overflow-x-auto mt-6">
+    <table class="min-w-full table-auto border-collapse rounded-lg overflow-hidden shadow-md">
+      <thead class="bg-gray-200 dark:bg-gray-900 text-gray-700 dark:text-gray-200 text-left">
+        <tr>
+          <th class="p-3">#</th>
+          <th class="p-3">Command</th>
+          <th class="p-3">Description</th>
+          <th class="p-3">Action</th>
+        </tr>
+      </thead>
+      <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">1</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd51">termux-torch [true/false]</td>
+          <td class="p-3">Turns flashlight on/off.</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd51')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+        </tr>
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">2</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd52">termux-wallpaper</td>
+          <td class="p-3">Sets wallpaper (incomplete in input).</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd52')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+        </tr>
+      </tbody> 
+    </table>
+</div>
+</div>
+
+
+<div class="category-wrap" data-category="TTS">
+<h2 class="text-2xl font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 py-2 px-4 rounded-lg shadow-md mt-8 mb-4 text-center">🗣️ Text-to-Speech (TTS)</h2>
+  <div class="category-table overflow-x-auto mt-6">
+    <table class="min-w-full table-auto border-collapse rounded-lg overflow-hidden shadow-md">
+      <thead class="bg-gray-200 dark:bg-gray-900 text-gray-700 dark:text-gray-200 text-left">
+        <tr>
+          <th class="p-3">#</th>
+          <th class="p-3">Command</th>
+          <th class="p-3">Description</th>
+          <th class="p-3">Action</th>
+        </tr>
+      </thead>
+      <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">1</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd53">termux-tts-speak [text]</td>
+          <td class="p-3">Speaks the text.</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd53')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+        </tr>
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">2</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd54">termux-tts-engines</td>
+          <td class="p-3">Lists available TTS engines.</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd54')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+        </tr>
+      </tbody> 
+    </table>
+</div>
+</div>
+
+<div class="category-wrap" data-category="browser">
+<h2 class="text-2xl font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 py-2 px-4 rounded-lg shadow-md mt-8 mb-4 text-center">🌐 Browser & URL Tools</h2>
+  <div class="category-table overflow-x-auto mt-6">
+    <table class="min-w-full table-auto border-collapse rounded-lg overflow-hidden shadow-md">
+      <thead class="bg-gray-200 dark:bg-gray-900 text-gray-700 dark:text-gray-200 text-left">
+        <tr>
+          <th class="p-3">#</th>
+          <th class="p-3">Command</th>
+          <th class="p-3">Description</th>
+          <th class="p-3">Action</th>
+        </tr>
+      </thead>
+      <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">1</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd55">termux-open-url [URL]</td>
+          <td class="p-3">Opens URL in browser.</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd55')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+        </tr>
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">2</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd56">termux-url-opener [URL]</td>
+          <td class="p-3">Opens URL in default app.</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd56')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+        </tr>
+      </tbody> 
+    </table>
+</div>
+</div>
+
+<div class="category-wrap" data-category="ui">
+<h2 class="text-2xl font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 py-2 px-4 rounded-lg shadow-md mt-8 mb-4 text-center">🔔 UI Interaction</h2>
+  <div class="category-table overflow-x-auto mt-6">
+    <table class="min-w-full table-auto border-collapse rounded-lg overflow-hidden shadow-md">
+      <thead class="bg-gray-200 dark:bg-gray-900 text-gray-700 dark:text-gray-200 text-left">
+        <tr>
+          <th class="p-3">#</th>
+          <th class="p-3">Command</th>
+          <th class="p-3">Description</th>
+          <th class="p-3">Action</th>
+        </tr>
+      </thead>
+      <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">1</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd57">termux-toast [message]</td>
+          <td class="p-3">Displays toast message.</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd57')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+        </tr>
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">2</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd58">termux-notification</td>
+          <td class="p-3">Sends a notification.</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd58')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+        </tr>
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">3</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd59">termux-dialog</td>
+          <td class="p-3">Opens interactive dialog.</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd59')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+        </tr>
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">4</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd61">termux-open-settings</td>
+          <td class="p-3">Opens Termux settings menu.</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd61')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+        </tr>
+      </tbody> 
+    </table>
+</div>
+</div>
+
+<div class="category-wrap" data-category="script">
+<h2 class="text-2xl font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 py-2 px-4 rounded-lg shadow-md mt-8 mb-4 text-center">🛠️ Script & Execution</h2>
+  <div class="category-table overflow-x-auto mt-6">
+    <table class="min-w-full table-auto border-collapse rounded-lg overflow-hidden shadow-md">
+      <thead class="bg-gray-200 dark:bg-gray-900 text-gray-700 dark:text-gray-200 text-left">
+        <tr>
+          <th class="p-3">#</th>
+          <th class="p-3">Command</th>
+          <th class="p-3">Description</th>
+          <th class="p-3">Action</th>
+        </tr>
+      </thead>
+      <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+          <td class="p-3">1</td>
+          <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd62">termux-fix-shebang [file]</td>
+          <td class="p-3">Fixes script shebang line.</td>
+          <td class="p-3">
+            <button onclick="copyText('cmd62')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+          </td>
+        </tr>
+      </tbody> 
+    </table>
+</div>
+</div>
+</div>
+
+<!-- Footer -->
+
+<footer class="bg-black text-white p-4 mt-8 text-center">
+  <p>&copy; 2025 Termux Guide. Built with <span aria-label="love">❤️</span> for CLI lovers.</p>
+</footer>
+
+<script src="/script/script.js" type="text/javascript" charset="utf-8"></script>
+
+</body>
+</html>

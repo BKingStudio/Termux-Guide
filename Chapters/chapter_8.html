@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 9 - Network Administration Commands</title>
+  <link rel="stylesheet" href="/styles/style.css" type="text/css" media="all" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#1f1f1f] text-gray-100 font-mono">
+
+  <header class="bg-black text-white p-6 shadow">
+    <h1 class="text-3xl font-bold text-center">
+      <a href="https://bkingstudio.github.io/Termux-Guide/" class="hover:underline">📟 Termux Commands Reference</a>
+    </h1>
+    <p class="text-center text-sm mt-1">A complete CLI guide for Android + Linux users</p>
+    <input type="text" id="bking_search" placeholder="Search commands or chapters..." class="p-2 rounded text-black" />
+    <button onclick="Search()" class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded text-sm">Search</button>
+  </header>
+
+<div class="p-4 max-w-4xl mx-auto">
+  <h2 class="text-3xl font-bold mb-6 text-green-600 border-b border-gray-600 pb-2">🌐 Chapter 8: Network Administration Commands</h2>
+  
+  <!-- Part 1: Network Diagnostics -->
+  <div class="category-wrap" data-category="diagnostics">
+    <h2 class="category-title text-2xl font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 py-2 px-4 rounded-lg shadow-md mt-8 mb-4 text-center">🔍 Network Diagnostics</h2>
+    <div class="category-table overflow-x-auto mt-6">
+      <table class="min-w-full table-auto border-collapse rounded-lg overflow-hidden shadow-md">
+        <thead class="bg-gray-200 dark:bg-gray-900 text-gray-700 dark:text-gray-200 text-left">
+          <tr>
+            <th class="p-3">#</th>
+            <th class="p-3">Command</th>
+            <th class="p-3">Description</th>
+            <th class="p-3">Action</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">1</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd377">termux-arp</td>
+            <td class="p-3">Displays and modifies the ARP cache</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd377')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">2</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd378">termux-dns-lookup</td>
+            <td class="p-3">Performs DNS lookups</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd378')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">3</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd379">termux-netstat</td>
+            <td class="p-3">Displays network connections, routing tables, etc.</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd379')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">4</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd380">termux-ping</td>
+            <td class="p-3">Sends ICMP echo requests to a host</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd380')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">5</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd381">termux-traceroute</td>
+            <td class="p-3">Traces the route taken by packets to a destination</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd381')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">6</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd382">termux-ss</td>
+            <td class="p-3">Displays socket statistics</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd382')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">7</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd383">termux-whois</td>
+            <td class="p-3">Retrieves WHOIS information for a domain</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd383')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">8</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd384">termux-nmap</td>
+            <td class="p-3">Performs network discovery and security auditing</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd384')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">9</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd385">termux-nping</td>
+            <td class="p-3">Sends ICMP echo requests to a host</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd385')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">10</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd386">termux-tcpdump</td>
+            <td class="p-3">Captures and analyzes network packets</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd386')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Part 2: Network Configuration -->
+  <div class="category-wrap" data-category="configuration">
+    <h2 class="category-title text-2xl font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 py-2 px-4 rounded-lg shadow-md mt-8 mb-4 text-center">⚙️ Network Configuration</h2>
+    <div class="category-table overflow-x-auto mt-6">
+      <table class="min-w-full table-auto border-collapse rounded-lg overflow-hidden shadow-md">
+        <thead class="bg-gray-200 dark:bg-gray-900 text-gray-700 dark:text-gray-200 text-left">
+          <tr>
+            <th class="p-3">#</th>
+            <th class="p-3">Command</th>
+            <th class="p-3">Description</th>
+            <th class="p-3">Action</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">11</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd387">termux-hostname</td>
+            <td class="p-3">Displays or sets the system hostname</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd387')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">12</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd388">termux-ip</td>
+            <td class="p-3">Displays or configures network interfaces</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd388')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">13</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd389">termux-ifconfig</td>
+            <td class="p-3">Displays or configures network interfaces</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd389')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">14</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd390">termux-route</td>
+            <td class="p-3">Displays or modifies the IP routing table</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd390')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">15</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd391">termux-sysctl</td>
+            <td class="p-3">Configures kernel parameters at runtime</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd391')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Part 3: Remote Connections -->
+  <div class="category-wrap" data-category="remote">
+    <h2 class="category-title text-2xl font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 py-2 px-4 rounded-lg shadow-md mt-8 mb-4 text-center">🔗 Remote Connections</h2>
+    <div class="category-table overflow-x-auto mt-6">
+      <table class="min-w-full table-auto border-collapse rounded-lg overflow-hidden shadow-md">
+        <thead class="bg-gray-200 dark:bg-gray-900 text-gray-700 dark:text-gray-200 text-left">
+          <tr>
+            <th class="p-3">#</th>
+            <th class="p-3">Command</th>
+            <th class="p-3">Description</th>
+            <th class="p-3">Action</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">16</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd392">termux-ssh</td>
+            <td class="p-3">Initiates an SSH session</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd392')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">17</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd393">termux-sshfs</td>
+            <td class="p-3">Mounts a remote filesystem over SSH</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd393')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">18</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd394">termux-ftp</td>
+            <td class="p-3">Initiates an FTP session</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd394')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">19</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd395">termux-telnet</td>
+            <td class="p-3">Initiates a Telnet session</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd395')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">20</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd396">termux-wget</td>
+            <td class="p-3">Retrieves files from the web using HTTP, HTTPS, or FTP</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd396')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Part 4: System Monitoring -->
+  <div class="category-wrap" data-category="monitoring">
+    <h2 class="category-title text-2xl font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 py-2 px-4 rounded-lg shadow-md mt-8 mb-4 text-center">📊 System Monitoring</h2>
+    <div class="category-table overflow-x-auto mt-6">
+      <table class="min-w-full table-auto border-collapse rounded-lg overflow-hidden shadow-md">
+        <thead class="bg-gray-200 dark:bg-gray-900 text-gray-700 dark:text-gray-200 text-left">
+          <tr>
+            <th class="p-3">#</th>
+            <th class="p-3">Command</th>
+            <th class="p-3">Description</th>
+            <th class="p-3">Action</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">21</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd397">termux-cpulimit</td>
+            <td class="p-3">Limits CPU usage of a process</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd397')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">22</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd398">termux-df</td>
+            <td class="p-3">Displays disk usage statistics</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd398')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">23</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd399">termux-iostat</td>
+            <td class="p-3">Displays I/O statistics</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd399')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Part 5: Additional Network Tools -->
+  <div class="category-wrap" data-category="additional">
+    <h2 class="category-title text-2xl font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 py-2 px-4 rounded-lg shadow-md mt-8 mb-4 text-center">➕ Additional Network Tools</h2>
+    <div class="category-table overflow-x-auto mt-6">
+      <table class="min-w-full table-auto border-collapse rounded-lg overflow-hidden shadow-md">
+        <thead class="bg-gray-200 dark:bg-gray-900 text-gray-700 dark:text-gray-200 text-left">
+          <tr>
+            <th class="p-3">#</th>
+            <th class="p-3">Command</th>
+            <th class="p-3">Description</th>
+            <th class="p-3">Action</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">24</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd400">termux-arp</td>
+            <td class="p-3">Displays and modifies the ARP cache</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd400')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">25</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd401">termux-dns-lookup</td>
+            <td class="p-3">Performs DNS lookups</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd401')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">26</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd402">termux-netstat</td>
+            <td class="p-3">Displays network connections, routing tables, etc.</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd402')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">27</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd403">termux-ping</td>
+            <td class="p-3">Sends ICMP echo requests to a host</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd403')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">28</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd404">termux-traceroute</td>
+            <td class="p-3">Traces the route taken by packets to a destination</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd404')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">29</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd405">termux-ss</td>
+            <td class="p-3">Displays socket statistics</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd405')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">30</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd406">termux-whois</td>
+            <td class="p-3">Retrieves WHOIS information for a domain</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd406')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">31</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd407">termux-nmap</td>
+            <td class="p-3">Performs network discovery and security auditing</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd407')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">32</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd408">termux-nping</td>
+            <td class="p-3">Sends ICMP echo requests to a host</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd408')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">33</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd409">termux-tcpdump</td>
+            <td class="p-3">Captures and analyzes network packets</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd409')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">34</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd410">termux-hostname</td>
+            <td class="p-3">Displays or sets the system hostname</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd410')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">35</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd411">termux-ip</td>
+            <td class="p-3">Displays or configures network interfaces</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd411')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">36</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd412">termux-ifconfig</td>
+            <td class="p-3">Displays or configures network interfaces</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd412')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">37</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd413">termux-route</td>
+            <td class="p-3">Displays or modifies the IP routing table</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd413')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">38</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd414">termux-sysctl</td>
+            <td class="p-3">Configures kernel parameters at runtime</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd414')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">39</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd415">termux-ssh</td>
+            <td class="p-3">Initiates an SSH session</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd415')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">40</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd416">termux-sshfs</td>
+            <td class="p-3">Mounts a remote filesystem over SSH</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd416')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">41</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd417">termux-ftp</td>
+            <td class="p-3">Initiates an FTP session</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd417')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">42</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd418">termux-telnet</td>
+            <td class="p-3">Initiates a Telnet session</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd418')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">43</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd419">termux-wget</td>
+            <td class="p-3">Retrieves files from the web using HTTP, HTTPS, or FTP</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd419')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">44</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd420">termux-cpulimit</td>
+            <td class="p-3">Limits CPU usage of a process</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd420')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">45</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd421">termux-df</td>
+            <td class="p-3">Displays disk usage statistics</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd421')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">46</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd422">termux-iostat</td>
+            <td class="p-3">Displays I/O statistics</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd422')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">47</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd423">termux-netstat</td>
+            <td class="p-3">Displays network connections, routing tables, etc.</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd423')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">48</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd424">termux-nmap</td>
+            <td class="p-3">Performs network discovery and security auditing</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd424')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">49</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd425">termux-ping</td>
+            <td class="p-3">Sends ICMP echo requests to a host</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd425')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+            <td class="p-3">50</td>
+            <td class="p-3 text-blue-600 dark:text-blue-400 font-mono" id="cmd426">termux-route</td>
+            <td class="p-3">Displays or modifies the IP routing table</td>
+            <td class="p-3">
+              <button onclick="copyText('cmd426')" class="copy-btn bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 rounded text-sm">Copy</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-black text-white p-4 mt-8 text-center">
+  <p>&copy; 2025 Termux Guide. Built with <span aria-label="love">❤️</span> for CLI lovers.</p>
+</footer>
+
+<script src="/script/script.js" type="text/javascript" charset="utf-8"></script>
+
+</body>
+</html>
